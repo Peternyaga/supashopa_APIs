@@ -29,8 +29,8 @@ if (isset($_POST['userId']) && isset($_POST['grand_total']) && isset($_POST['ite
             $businessShortCode = "6789398";
             $passkey = $response['passkey'];
             //$consumerkey = $response['ConsumerKey'];
-            $consumerkey = 'REMOVED_ROTATE_CREDENTIAL';
-            $consumerSecret = 'REMOVED_ROTATE_CREDENTIAL';
+            $consumerkey = getenv('MPESA_CONSUMER_KEY');
+            $consumerSecret = getenv('MPESA_CONSUMER_SECRET');
             $transactionType = $response['TransactionType'];
             $accountReference = $response['AccountReference'];
 
@@ -40,7 +40,7 @@ if (isset($_POST['userId']) && isset($_POST['grand_total']) && isset($_POST['ite
                 //'BusinessShortCode' => $businessShortCode,
                 'BusinessShortCode' => "6789398",
                 //'passkey' => $passkey,
-                'passkey' => "REMOVED_ROTATE_CREDENTIAL",
+                'passkey' => getenv('MPESA_PASSKEY'),
                 'key' => $consumerkey,
                 'secret' => $consumerSecret,
                 'username' => 'apitest',

@@ -1,5 +1,5 @@
 <?php
-$password = "REMOVED_ROTATE_CREDENTIAL";
+$password = getenv('MPESA_SECURITY_PASSWORD');
 $tokenURL="https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
 $credentials= base64_encode("CVckGrldn5SCKxkjxtUvXQQu6tgCgeBX". ":". "NGl6j1m6AlZq1kVn");
 $bytePassword = unpack('c*', $password);
